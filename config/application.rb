@@ -54,7 +54,7 @@ module Denuncias
       :address => ENV["SMTP_ADDRESS"],
       :domain => ENV["SMTP_DOMNAIN"],
       :port => ENV["SMTP_PORT"],
-      :authentication => :cram_md5,
+      :authentication => :plain,
       :enable_starttls_auto => true
     }
 
