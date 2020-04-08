@@ -3,7 +3,17 @@ class DelationsController < ApplicationController
     before_action :set_delation, only: [:show, :update, :destroy]
 
     def index 
-        render json: Delation.order(id: :desc)
+        delations = Delation.order(id: :desc)
+
+        if params[:search]
+            if params[:search][:description]
+                lower_desc = params[:search][:description].downcase
+                delations = delations.where("LOWER(description) LIKE '%#{lower_desc}%'")
+            end
+        end
+
+        delations = delations.page(params[:page] ? params[:page].to_i : 1).per(10)
+        render json: {delations: delations, meta: pagination_meta(delations)}
     end
 
     def create
@@ -34,4 +44,14 @@ class DelationsController < ApplicationController
     def set_delation
         @delation = Delation.find(params[:id])
     end
+
+    def pagination_meta(object)        
+        {        
+            current_page: object.current_page,        
+            next_page: object.next_page,        
+            prev_page: object.prev_page,        
+            total_pages: object.total_pages,        
+            total_count: object.total_count        
+        }    
+    end    
 end
