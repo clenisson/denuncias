@@ -12,6 +12,7 @@ Rails.application.routes.draw do
              }  
   scope '/user' do 
     get 'me', to: 'users#me'
+    post 'reset-password', to: 'users#reset_password'
     put '', to: 'users#update'
   end
 end
