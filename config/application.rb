@@ -45,5 +45,19 @@ module Denuncias
         )
       end
     end    
+
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      :user_name => ENV["SMTP_USER_NAME"],
+      :password => ENV["SMTP_PASSWORD"],
+      :address => ENV["SMTP_ADDRESS"],
+      :domain => ENV["SMTP_DOMNAIN"],
+      :port => ENV["SMTP_PORT"],
+      :authentication => :cram_md5,
+      :enable_starttls_auto => true
+    }
+
   end
+  
 end
