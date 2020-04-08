@@ -1,24 +1,9 @@
-# README
+# Teste Rails - API de Denúncias
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+URL em produção:
 
-Things you may want to cover:
+https://hidden-atoll-37184.herokuapp.com/
 
-* Ruby version
+Coleção Postman (com documentação): 
+https://explore.postman.com/templates/7060/api-den%C3%BAncias 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
