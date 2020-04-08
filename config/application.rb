@@ -52,7 +52,7 @@ module Denuncias
       :user_name => ENV["SMTP_USER_NAME"],
       :password => ENV["SMTP_PASSWORD"],
       :address => ENV["SMTP_ADDRESS"],
-      :domain => ENV["SMTP_DOMNAIN"],
+      :domain => ENV["SMTP_DOMAIN"],
       :port => ENV["SMTP_PORT"],
       :authentication => :plain,
       :enable_starttls_auto => true
