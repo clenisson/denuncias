@@ -9,5 +9,9 @@ Rails.application.routes.draw do
              controllers: {
                sessions: 'sessions',
                registrations: 'registrations'
-             }
+             }  
+  scope '/user' do 
+    get 'me', to: 'users#me'
+    put '', to: 'users#update'
+  end
 end
