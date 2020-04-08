@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     post 'reset-password', to: 'users#reset_password'
     put '', to: 'users#update'
   end
+
+  resources :delations
 end
